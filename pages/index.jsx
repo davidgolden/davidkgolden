@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import styles from '../styles/index.module.scss';
 
 const Index = () => {
-    return <Layout className={styles.main} pageTitle={"Hello"}>
+    return <Layout className={styles.main} pageTitle={"David Golden"}>
         <h1>David Golden</h1>
         <h2>Senior Web Engineer
             in Durango, CO</h2>
