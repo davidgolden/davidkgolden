@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK&display=swap');
+
+$dark: #25291C;
+$light: #E3E7D3;
+$brown: #886F68;
+$green: #548C2F;
+$purple: #6369D1;
+
+html, body {
+    background: $dark;
+    color: $light;
+    padding: 2vh 5vw;
+    font-size: 16px;
+    font-family: 'Noto Sans HK', sans-serif;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: .9rem;
+}
+
+a {
+    color: inherit;
+}
+
+pre {
+    display: inline;
+    vertical-align: middle;
+}
+
+blockquote {
+    border-left: 2px solid $light;
+    margin-left: 0;
+    padding-left: 2rem;
+}
+
+.inline-code {
+    display: inline-block;
+    padding: 0.2rem;
+    font-size: 1rem;
+}

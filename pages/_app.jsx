@@ -1,4 +1,4 @@
-import "highlight.js/styles/atom-one-dark.css";
+import "../styles/reset.scss";
 
 function MyApp({ Component, pageProps }) {
     return <Component {...pageProps} />

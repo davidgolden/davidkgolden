@@ -1,45 +1,19 @@
-import Head from 'next/head'
 import Layout from "../components/Layout";
-import PostList from "../components/PostList";
-import matter from "gray-matter";
+import styles from '../styles/index.module.scss';
 
-const Index = ({ title, description, posts, ...props }) => {
-    return <Layout pageTitle={title}>
-        <h1>Welcome!</h1>
-        <p>{description}</p>
+const Index = () => {
+    return <Layout className={styles.main} pageTitle={"Hello"}>
+        <h1>David Golden</h1>
+        <h2>Senior Web Engineer
+            in Durango, CO</h2>
         <main>
-            <PostList posts={posts} />
+            <p>
+                Welcome to my landing page! I'm a senior web engineer at SchoolBlocks. I try to spend as much time
+                outdoors (in the summer) as possible,
+                love long runs in the mountains, and my current obsession is beer and homebrewing.
+            </p>
         </main>
     </Layout>
 };
 
 export default Index
-
-export async function getStaticProps() {
-    const configData = await import(`../siteconfig.json`)
-
-    const posts = ((context) => {
-        const keys = context.keys()
-        const values = keys.map(context)
-
-        const data = keys.map((key, index) => {
-            let slug = key.replace(/^.*[\\\/]/, '').slice(0, -3)
-            const value = values[index]
-            const document = matter(value.default)
-            return {
-                frontmatter: document.data,
-                markdownBody: document.content,
-                slug,
-            }
-        })
-        return data
-    })(require.context('../posts', true, /\.md$/));
-
-    return {
-        props: {
-            posts,
-            title: configData.default.title,
-            description: configData.default.description,
-        },
-    }
-}
