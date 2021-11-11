@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK&display=swap');
-
-$dark: #25291C;
-$light: #E3E7D3;
-$brown: #886F68;
-$green: #548C2F;
-$purple: #6369D1;
+@import "./variables.scss";
 
 html, body {
     background: $dark;
